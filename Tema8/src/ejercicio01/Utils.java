@@ -15,6 +15,9 @@ public class Utils {
 			num = 0;
 			System.out.println("El valor insertado no es de tipo int ");
 		}	
+		finally {
+			sc.nextLine();		
+		}
 		return num;
 	}
 	
@@ -28,6 +31,9 @@ public class Utils {
 			num = 0;
 			System.out.println("El valor insertado no es de tipo double ");
 		}	
+		finally {
+			sc.nextLine();
+		}
 		return num;
 	}
 }

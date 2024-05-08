@@ -12,6 +12,7 @@ public class Main {
 		
 		do {
 			menu();
+			System.out.println("ELIGE OPCION ");
 			opc = sc.nextInt();
 			sc.nextLine();
 			
@@ -21,7 +22,7 @@ public class Main {
 				break;
 			}
 			case 2: {
-				numDb = Utils.readInt(sc);
+				numDb = Utils.readDouble(sc);
 				break;
 			}
 			case 3: {
