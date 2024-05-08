@@ -1,4 +1,4 @@
-package ejercicio04;
+package excepciones.ejercicio04;
 
 public class CantidadException extends Exception{
 	@Override

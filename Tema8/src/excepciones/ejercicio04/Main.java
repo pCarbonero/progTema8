@@ -1,6 +1,6 @@
-package ejercicio04;
+package excepciones.ejercicio04;
 
-import ejercicio03.NombreException;
+import excepciones.ejercicio03.NombreException;
 
 public class Main {
 

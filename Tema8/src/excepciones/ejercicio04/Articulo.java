@@ -1,7 +1,7 @@
-package ejercicio04;
+package excepciones.ejercicio04;
 
-import ejercicio03.NombreException;
-import ejercicio03.SaldoException;
+import excepciones.ejercicio03.NombreException;
+import excepciones.ejercicio03.SaldoException;
 
 public class Articulo {
 	/**

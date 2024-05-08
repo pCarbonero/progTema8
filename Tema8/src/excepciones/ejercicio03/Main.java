@@ -1,4 +1,4 @@
-package ejercicio03;
+package excepciones.ejercicio03;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package Ejercicio02;
+package excepciones.ejercicio02;
 
 public class Hora {
 	/**

@@ -1,4 +1,4 @@
-package ejercicio04;
+package excepciones.ejercicio04;
 
 public class PrecioException extends Exception{
 	@Override
