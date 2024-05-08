@@ -28,17 +28,26 @@ public class Articulo {
 	 * @param precio
 	 * @param cuantosQuedan
 	 */
-	public Articulo(String nombre, double precio, int cuantosQuedan) throws NombreException, SaldoException{
+	public Articulo(String nombre, double precio, int cuantosQuedan) throws NombreException, PrecioException, CantidadException{
 		if (nombre != null && !nombre.equals("")) {
 			this.nombre = nombre;
+		}
+		else {
+			throw new NombreException();
 		}
 
 		if (precio > 0) {
 			this.precio = precio;
 		}
+		else {
+			throw new PrecioException();
+		}
 
 		if (cuantosQuedan >= 0) {
 			this.cuantosQuedan = cuantosQuedan;
+		}
+		else {
+			throw new CantidadException();
 		}
 	}
 
@@ -154,5 +163,14 @@ public class Articulo {
 
 	void almacenar(int cantidad) {
 		this.cuantosQuedan += cantidad;
+	}
+	
+	@Override
+	public String toString() {
+		String cadena = "";
+		cadena += this.nombre + "\n";
+		cadena += "Precio: " + this.precio + "€" + "\n";
+		cadena += "Stock: " + this.cuantosQuedan + "\n";
+		return cadena;
 	}
 }
