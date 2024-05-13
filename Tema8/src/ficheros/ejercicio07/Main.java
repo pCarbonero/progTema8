@@ -1,5 +1,8 @@
 package ficheros.ejercicio07;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -45,6 +48,7 @@ public class Main {
 				break;
 			}
 			case 4: {
+
 				System.out.println("Has salido ");
 				break;
 			}
