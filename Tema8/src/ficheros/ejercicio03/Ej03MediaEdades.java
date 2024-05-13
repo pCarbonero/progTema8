@@ -8,23 +8,25 @@ import java.util.Scanner;
 public class Ej03MediaEdades {
 
 	public static void main(String[] args) {
-		int sum = 0;
-		double  avg = 0;
+		String nombre;
+		double ageAvg = 0;
+		double heiAvg = 0;
 		int cont = 0;
 
 		try {
 			Scanner sc = new Scanner(new FileReader("src/ficheros/ejercicio03/Alumnos.txt"));
 			while (sc.hasNext()) {
-				try {
-					sum += sc.nextInt();
-					cont++;
-				} catch (InputMismatchException e) {
-					sc.next();
-				}			
+				nombre = sc.next();
+				System.out.println(nombre);
+				ageAvg += sc.nextInt();
+				heiAvg += Double.parseDouble(sc.next());
+				cont++;
 			}
-			
-			avg =(double) (sum / cont);
-			System.out.println(avg);
+
+			ageAvg = (ageAvg / cont);
+			heiAvg = (heiAvg / cont);
+			System.out.println("Edad media: " + ageAvg);
+			System.out.println("Altura media: " + heiAvg);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
