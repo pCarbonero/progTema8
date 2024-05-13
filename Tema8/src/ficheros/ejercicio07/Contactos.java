@@ -1,6 +1,6 @@
 package ficheros.ejercicio07;
 
-import java.util.Collections;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Contactos {
@@ -26,10 +26,16 @@ public class Contactos {
 	}
 
 	public static int mostrarNumero(String nombre) {
-		return lista.get(nombre);
+		int numero = 0;
+		if (lista.containsKey(nombre)) {
+			numero = lista.get(nombre);
+		}
+		return numero;
 	}
 
 	public static void mostrarLista() {
-		System.out.println(lista);
+		for (Map.Entry<String, Integer> entry : lista.entrySet()) {
+			System.out.println("[" + entry.getKey() + ", " + entry.getValue() + "]");
+		}
 	}
 }
