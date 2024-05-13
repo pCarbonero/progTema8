@@ -1,6 +1,8 @@
 package ficheros.ejercicio07;
 
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
@@ -45,7 +47,7 @@ public class Contactos {
 
 	public static void guardarLista() {
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter("src/ficheros/ejercicio07"));
+			BufferedWriter bw = new BufferedWriter(new FileWriter("src/ficheros/ejercicio07/agenda.txt"));
 			for (Map.Entry<String, Integer> entry : lista.entrySet()) {
 				bw.write(entry.getKey() + " " + entry.getValue());
 				bw.newLine();
@@ -58,7 +60,19 @@ public class Contactos {
 	}
 
 	public static void recuperarDatos() {
-		Scanner sc = new Scanner(System.in);
+		String nombre;
+		int numero;
+		try {
+			Scanner sc = new Scanner(new FileReader("src/ficheros/ejercicio07/agenda.txt"));
+			while (sc.hasNext()){
+				nombre = sc.next();
+				numero = sc.nextInt();
+				lista.put(nombre, numero);
+			}
+			sc.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		
 	}
 }

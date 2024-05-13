@@ -1,8 +1,6 @@
 package ficheros.ejercicio07;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -12,8 +10,12 @@ public class Main {
 		int opc = 0;
 		String nombre;
 		int numero;
-
+		File file = new File("src/ficheros/ejercicio07/agenda.txt");
+		if (file.exists()) {
+			Contactos.recuperarDatos();
+		}
 		do {
+			
 			menu();
 			System.out.println("ESLIGE UNA OPCIÓN");
 			opc = sc.nextInt();
@@ -48,7 +50,7 @@ public class Main {
 				break;
 			}
 			case 4: {
-
+				Contactos.guardarLista();
 				System.out.println("Has salido ");
 				break;
 			}
